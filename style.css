@@ -46,3 +46,30 @@ body {
   text-align: center;
   color: #00ffcc;
 }
+
+.terminal {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 2px solid #00ffcc;
+  padding: 20px;
+  box-shadow: 0 0 20px #00ffcc;
+  overflow-y: auto;
+  color: #00ffcc;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+}
+
+.header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00ffff;
+}
+
+.output {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
