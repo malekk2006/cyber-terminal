@@ -1,6 +1,19 @@
 function grantAccess() {
   const code = document.getElementById("code").value;
   const status = document.getElementById("status");
+
+  if (code === "malek2025") {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("main").style.display = "block";
+    typeLine();
+    drawGlobe();
+    updateStats();
+  } else {
+    status.innerText = "ACCESS DENIED";
+  }
+}
+
+// تيرمنال أوامر تلقائية
 const output = document.getElementById("output");
 const lines = [
   "Initializing CyberOS...",
@@ -22,7 +35,8 @@ function typeLine() {
   }
 }
 
-  const canvas = document.getElementById("globe");
+// كرة أرضية وهمية
+const canvas = document.getElementById("globe");
 const ctx = canvas.getContext("2d");
 
 function resizeCanvas() {
@@ -47,7 +61,6 @@ function drawGlobe() {
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  // خطوط دوران وهمية
   ctx.beginPath();
   ctx.arc(x, y, radius, angle, angle + Math.PI / 2);
   ctx.strokeStyle = "#00ffff";
@@ -58,12 +71,37 @@ function drawGlobe() {
   requestAnimationFrame(drawGlobe);
 }
 
-drawGlobe();
+// مؤشرات وهمية
+function updateStats() {
+  setInterval(() => {
+    document.getElementById("cpu").innerText = Math.floor(Math.random() * 100) + "%";
+    document.getElementById("ram").innerText = Math.floor(Math.random() * 100) + "%";
+    document.getElementById("net").innerText = Math.floor(Math.random() * 1000) + "kb/s";
+  }, 1000);
+}
 
-  if (code === "malek2025") {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("main").style.display = "block";
+// أوامر وهمية
+function runCommand() {
+  const cmd = document.getElementById("command").value.toLowerCase();
+  const clickSound = document.getElementById("clickSound");
+  clickSound.play();
+
+  if (cmd === "breach") {
+    document.getElementById("main").style.display = "none";
+    document.getElementById("breach").style.display = "block";
+    document.getElementById("breachSound").play();
+  } else if (cmd === "open window") {
+    document.getElementById("popup").style.display = "block";
+  } else if (cmd === "clear") {
+    output.innerHTML = "";
   } else {
-    status.innerText = "ACCESS DENIED";
+    output.innerHTML += `> ${cmd}\nUnknown command\n`;
   }
+
+  document.getElementById("command").value = "";
+}
+
+// إغلاق النافذة الوهمية
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
 }
