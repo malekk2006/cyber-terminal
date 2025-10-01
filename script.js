@@ -22,7 +22,44 @@ function typeLine() {
   }
 }
 
-  
+  const canvas = document.getElementById("globe");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+let angle = 0;
+
+function drawGlobe() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const x = canvas.width / 2;
+  const y = canvas.height / 2;
+  const radius = 120;
+
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2);
+  ctx.strokeStyle = "#00ffcc";
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // خطوط دوران وهمية
+  ctx.beginPath();
+  ctx.arc(x, y, radius, angle, angle + Math.PI / 2);
+  ctx.strokeStyle = "#00ffff";
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  angle += 0.01;
+  requestAnimationFrame(drawGlobe);
+}
+
+drawGlobe();
+
   if (code === "malek2025") {
     document.getElementById("login").style.display = "none";
     document.getElementById("main").style.display = "block";
