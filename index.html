@@ -16,18 +16,35 @@
   </div>
 
   <div class="main-ui" id="main" style="display:none;">
-    <h2>Welcome, Commander MALEK</h2>
-    <p>CyberOS is now online...</p>
+    <div class="terminal">
+      <div class="header">CyberOS Terminal — Operator: MALEK</div>
+      <div class="output" id="output"></div>
+    </div>
     <canvas id="globe"></canvas>
-    
-    <div class="main-ui" id="main" style="display:none;">
-  <div class="terminal">
-    <div class="header">CyberOS Terminal — Operator: MALEK</div>
-    <div class="output" id="output"></div>
+    <div class="stats">
+      <div>CPU: <span id="cpu">0%</span></div>
+      <div>RAM: <span id="ram">0%</span></div>
+      <div>NET: <span id="net">0kb/s</span></div>
+    </div>
+    <div class="command-input">
+      <input type="text" id="command" placeholder="Type command..." />
+      <button onclick="runCommand()">Run</button>
+    </div>
   </div>
-</div>
 
+  <div class="breach-screen" id="breach" style="display:none;">
+    <h1>SYSTEM BREACHED</h1>
+    <p>MALEK WAS HERE 💀</p>
   </div>
+
+  <div class="popup" id="popup" style="display:none;">
+    <div class="popup-header">CyberOS Window</div>
+    <div class="popup-body">This is a fake window.</div>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <audio id="clickSound" src="sounds/click.mp3"></audio>
+  <audio id="breachSound" src="sounds/breach.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
