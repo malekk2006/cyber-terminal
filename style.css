@@ -73,3 +73,12 @@ body {
   white-space: pre-wrap;
   line-height: 1.5;
 }
+
+canvas#globe {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
+}
