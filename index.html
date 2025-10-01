@@ -3,17 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberOS Hacker Simulator</title>
+  <title>CyberOS MALEk al-astal</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="terminal" id="terminal"></div>
+  <div class="matrix" id="matrix"></div>
 
-  <!-- نافذة وهمية -->
-  <div class="popup" id="popup" style="display:none;">
-    <div class="popup-header">CyberOS Window</div>
-    <div class="popup-body">Simulated breach successful.</div>
-    <button onclick="closePopup()">Close</button>
+  <div class="main-ui" id="main" style="display:none;">
+    <div class="top-bar">
+      <div class="username">MALEk al-astal</div>
+      <div class="clock" id="clock"></div>
+      <button onclick="toggleTheme()">☀️/🌙</button>
+    </div>
+
+    <div class="map"></div>
+
+    <div class="stats">
+      CPU: <span id="cpu">0%</span> |
+      RAM: <span id="ram">0%</span> |
+      NET: <span id="net">0kb/s</span>
+    </div>
+
+    <div class="terminal" id="terminal"></div>
+
+    <div class="file-manager" id="files">
+      <div class="file">system.log</div>
+      <div class="file">payload.exe</div>
+      <div class="file">trace.txt</div>
+    </div>
+
+    <div class="keyboard">
+      <div class="key">ESC</div><div class="key">CTRL</div><div class="key">ALT</div><div class="key">DEL</div>
+    </div>
   </div>
 
   <audio id="typeSound" src="sounds/type.mp3"></audio>
