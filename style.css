@@ -1,142 +1,20 @@
 body {
   margin: 0;
-  background: radial-gradient(#000000, #0f0f0f);
+  background: url('https://i.imgur.com/3ZQ3Z3U.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #00ff00;
   font-family: 'Courier New', monospace;
-  color: #00ffcc;
   overflow: hidden;
 }
 
-.login-screen {
-  text-align: center;
-  border: 2px solid #00ffcc;
-  padding: 40px;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 20px #00ffcc;
-  position: absolute;
-  top: 30%;
-  left: 35%;
-  z-index: 10;
-}
-
-.login-screen input {
-  padding: 10px;
-  font-size: 18px;
-  background: black;
-  color: #00ffcc;
-  border: 1px solid #00ffcc;
-  margin-top: 10px;
-}
-
-.login-screen button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #00ffcc;
-  color: black;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#status {
-  margin-top: 20px;
-  color: #ff0044;
-  font-weight: bold;
-}
-
-.main-ui {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
 .terminal {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 40%;
-  height: 80%;
-  background-color: rgba(0, 0, 0, 0.85);
-  border: 2px solid #00ffcc;
   padding: 20px;
-  box-shadow: 0 0 20px #00ffcc;
-  overflow-y: auto;
-  color: #00ffcc;
-  font-size: 14px;
-}
-
-.header {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #00ffff;
-}
-
-.output {
   white-space: pre-wrap;
-  line-height: 1.5;
-}
-
-canvas#globe {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 55%;
-  height: 100%;
-  z-index: 0;
-}
-
-.stats {
-  position: absolute;
-  bottom: 10px;
-  left: 5%;
-  color: #00ffcc;
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-  border: 1px solid #00ffcc;
-}
-
-.command-input {
-  position: absolute;
-  bottom: 80px;
-  left: 5%;
-  z-index: 10;
-}
-
-.command-input input {
-  padding: 10px;
-  background: black;
-  color: #00ffcc;
-  border: 1px solid #00ffcc;
-}
-
-.command-input button {
-  padding: 10px;
-  background: #00ffcc;
-  color: black;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.breach-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  color: red;
-  font-size: 40px;
-  text-align: center;
-  padding-top: 20%;
-  z-index: 999;
-  animation: flash 0.5s infinite;
-}
-
-@keyframes flash {
-  0% { background: black; }
-  50% { background: red; }
-  100% { background: black; }
+  line-height: 1.4;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .popup {
@@ -155,4 +33,13 @@ canvas#globe {
 .popup-header {
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #00ffcc;
+  color: black;
+  border: none;
+  cursor: pointer;
 }
