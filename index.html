@@ -7,42 +7,53 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- شاشة الدخول -->
   <div class="login-screen" id="login">
     <h1>ACCESS PORTAL</h1>
     <p>Enter Authorization Code</p>
-    <input type="password" id="code" placeholder="••••••••" />
+    <input type="password" id="code" placeholder="سجل دخول" />
     <button onclick="grantAccess()">ENTER</button>
     <div id="status"></div>
   </div>
 
+  <!-- واجهة النظام -->
   <div class="main-ui" id="main" style="display:none;">
     <div class="terminal">
       <div class="header">CyberOS Terminal — Operator: MALEK</div>
       <div class="output" id="output"></div>
     </div>
+
+    <!-- كرة أرضية -->
     <canvas id="globe"></canvas>
+
+    <!-- مؤشرات النظام -->
     <div class="stats">
       <div>CPU: <span id="cpu">0%</span></div>
       <div>RAM: <span id="ram">0%</span></div>
       <div>NET: <span id="net">0kb/s</span></div>
     </div>
+
+    <!-- إدخال أوامر -->
     <div class="command-input">
       <input type="text" id="command" placeholder="Type command..." />
       <button onclick="runCommand()">Run</button>
     </div>
   </div>
 
+  <!-- شاشة اختراق وهمية -->
   <div class="breach-screen" id="breach" style="display:none;">
     <h1>SYSTEM BREACHED</h1>
     <p>MALEK WAS HERE 💀</p>
   </div>
 
+  <!-- نافذة وهمية -->
   <div class="popup" id="popup" style="display:none;">
     <div class="popup-header">CyberOS Window</div>
     <div class="popup-body">This is a fake window.</div>
     <button onclick="closePopup()">Close</button>
   </div>
 
+  <!-- مؤثرات صوتية -->
   <audio id="clickSound" src="sounds/click.mp3"></audio>
   <audio id="breachSound" src="sounds/breach.mp3"></audio>
 
