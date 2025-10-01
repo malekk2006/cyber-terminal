@@ -3,10 +3,7 @@ body {
   background: radial-gradient(#000000, #0f0f0f);
   font-family: 'Courier New', monospace;
   color: #00ffcc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  overflow: hidden;
 }
 
 .login-screen {
@@ -15,6 +12,10 @@ body {
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 20px #00ffcc;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  z-index: 10;
 }
 
 .login-screen input {
@@ -43,15 +44,16 @@ body {
 }
 
 .main-ui {
-  text-align: center;
-  color: #00ffcc;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
 .terminal {
   position: absolute;
   top: 10%;
   left: 5%;
-  width: 90%;
+  width: 40%;
   height: 80%;
   background-color: rgba(0, 0, 0, 0.85);
   border: 2px solid #00ffcc;
@@ -60,7 +62,6 @@ body {
   overflow-y: auto;
   color: #00ffcc;
   font-size: 14px;
-  font-family: 'Courier New', monospace;
 }
 
 .header {
@@ -78,7 +79,80 @@ canvas#globe {
   position: absolute;
   right: 0;
   top: 0;
-  width: 50%;
+  width: 55%;
   height: 100%;
   z-index: 0;
+}
+
+.stats {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  color: #00ffcc;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border: 1px solid #00ffcc;
+}
+
+.command-input {
+  position: absolute;
+  bottom: 80px;
+  left: 5%;
+  z-index: 10;
+}
+
+.command-input input {
+  padding: 10px;
+  background: black;
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+}
+
+.command-input button {
+  padding: 10px;
+  background: #00ffcc;
+  color: black;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.breach-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: red;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 20%;
+  z-index: 999;
+  animation: flash 0.5s infinite;
+}
+
+@keyframes flash {
+  0% { background: black; }
+  50% { background: red; }
+  100% { background: black; }
+}
+
+.popup {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 300px;
+  background: #111;
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  padding: 20px;
+  z-index: 100;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+.popup-header {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
